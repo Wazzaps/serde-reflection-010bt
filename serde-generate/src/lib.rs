@@ -19,6 +19,7 @@
 //! * C# (NetCoreApp >= 2.1)
 //! * Swift 5.3
 //! * OCaml
+//! * 010 Editor's Binary Templates
 //!
 //! The following languages are partially supported and still considered under development:
 //!
@@ -140,6 +141,8 @@ pub mod analyzer;
 /// Utility function to generate indented text
 pub mod indent;
 
+/// Support for code-generation in 010 Binary Templates
+pub mod bt010;
 /// Support for code-generation in C++
 pub mod cpp;
 /// Support for code-generation in C#

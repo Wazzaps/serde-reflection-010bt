@@ -88,6 +88,7 @@ Currently, `serde-generate` generates type definitions and supports [Bincode](ht
 * OCaml
 * Typescript (in progress)
 * Dart (in progress)
+* 010 Editor's Binary Templates (in progress)
 
 
 ## Benefits

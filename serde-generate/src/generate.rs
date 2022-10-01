@@ -9,8 +9,8 @@
 //! '''
 
 use serde_generate::{
-    cpp, csharp, dart, golang, java, ocaml, python3, rust, swift, typescript, CodeGeneratorConfig,
-    Encoding, SourceInstaller,
+    bt010, cpp, csharp, dart, golang, java, ocaml, python3, rust, swift, typescript,
+    CodeGeneratorConfig, Encoding, SourceInstaller,
 };
 use serde_reflection::Registry;
 use std::path::PathBuf;
@@ -29,6 +29,7 @@ enum Language {
     CSharp,
     Swift,
     OCaml,
+    Bt010,
 }
 }
 
@@ -160,6 +161,9 @@ fn main() {
                     Language::OCaml => ocaml::CodeGenerator::new(&config)
                         .output(&mut out, &registry)
                         .unwrap(),
+                    Language::Bt010 => bt010::CodeGenerator::new(&config)
+                        .output(&mut out, &registry)
+                        .unwrap(),
                 }
             }
         }
@@ -181,6 +185,9 @@ fn main() {
                     Language::CSharp => Box::new(csharp::Installer::new(install_dir)),
                     Language::Swift => Box::new(swift::Installer::new(install_dir)),
                     Language::OCaml => Box::new(ocaml::Installer::new(install_dir)),
+                    Language::Bt010 => {
+                        panic!("bt101 doesn't support installation")
+                    }
                 };
 
             if let Some((registry, name)) = named_registry_opt {

@@ -27,6 +27,7 @@ The following languages are partially supported and still considered under devel
 
 * TypeScript 4 (packaged and tested with Deno) [(follow-up issue)](https://github.com/novifinancial/serde-reflection/issues/119)
 * Dart >= 2 [(follow-up issue)](https://github.com/novifinancial/serde-reflection/issues/120)
+* 010 Editor's Binary Templates
 
 ### Supported Encodings
 
